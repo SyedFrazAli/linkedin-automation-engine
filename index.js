@@ -2,8 +2,7 @@
 require('dotenv').config();
 const WorkflowEngine = require('./workflows/workflowEngine');
 const CronScheduler = require('./scheduler/cronScheduler');
-const logger = require('./utils/logger');
-
+const { logger } = require('./utils/logger');
 const main = async () => {
   logger.info('LinkedIn Automation Engine starting...');
 
