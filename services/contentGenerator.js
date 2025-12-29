@@ -1,7 +1,6 @@
 // services/contentGenerator.js
 const axios = require('axios');
-const logger = require('../utils/logger');
-
+const { logger } = require('../utils/logger');
 /**
  * PHASE 5: Content Generation
  * LLM-agnostic API wrapper for free inference providers
@@ -279,4 +278,4 @@ Generate a professional LinkedIn post. [/INST]`;
   }
 }
 
-module.exports = ContentGenerator;
+module.exports = { ContentGenerator };
