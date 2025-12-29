@@ -295,4 +295,4 @@ class LinkedInPublisher {
   }
 }
 
-module.exports = { LinkedInPublisher; }
+module.exports = { LinkedInPublisher }
