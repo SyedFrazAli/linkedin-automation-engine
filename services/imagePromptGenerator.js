@@ -299,4 +299,4 @@ Quality: High resolution, 16:9 aspect ratio.`;
   }
 }
 
-module.exports = { ImagePromptGenerator; }
+module.exports = { ImagePromptGenerator }
