@@ -1,0 +1,30 @@
+{
+  "name": "linkedin-automation-engine",
+  "version": "1.0.0",
+  "description": "Self-hosted workflow automation for LinkedIn post generation from GitHub signals",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "workflow": "node index.js --workflow"
+  },
+  "dependencies": {
+    "axios": "^1.6.5",
+    "node-cron": "^3.0.3",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "automation",
+    "linkedin",
+    "workflow",
+    "github",
+    "n8n-alternative",
+    "workflow-engine"
+  ],
+  "author": "Syed Fraz Ali",
+  "license": "MIT"
+}
