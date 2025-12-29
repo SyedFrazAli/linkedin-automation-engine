@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Self-hosted workflow automation for LinkedIn post generation from GitHub signals",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "node --watch index.js",
