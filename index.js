@@ -1,9 +1,8 @@
-import dotenv from 'dotenv';
-import { WorkflowEngine } from './workflows/workflowEngine.js';
-import { CronScheduler } from './scheduler/cronScheduler.js';
-import { logger } from './utils/logger.js';
-
-dotenv.config();
+// index.js - Entry point for LinkedIn Automation Engine
+require('dotenv').config();
+const WorkflowEngine = require('./workflows/workflowEngine');
+const CronScheduler = require('./scheduler/cronScheduler');
+const logger = require('./utils/logger');
 
 const main = async () => {
   logger.info('LinkedIn Automation Engine starting...');
@@ -20,7 +19,7 @@ const main = async () => {
 
   logger.info('Starting scheduler mode');
   const scheduler = new CronScheduler();
-  
+
   // Schedule the LinkedIn automation workflow to run every day at 9 AM
   scheduler.schedule(
     'linkedin-automation-workflow',
@@ -31,7 +30,7 @@ const main = async () => {
       await engine.executeWorkflow();
     }
   );
-  
+
   scheduler.startAll();
   logger.info('Scheduler started. Automation engine is running.');
 
@@ -40,9 +39,15 @@ const main = async () => {
     scheduler.stopAll();
     process.exit(0);
   });
+
+  process.on('SIGTERM', () => {
+    logger.info('Received SIGTERM signal. Shutting down...');
+    scheduler.stopAll();
+    process.exit(0);
+  });
 };
 
 main().catch((error) => {
-  logger.error('Fatal error:', error);
+  logger.error('Fatal error in main process', { error: error.message });
   process.exit(1);
 });
