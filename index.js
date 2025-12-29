@@ -1,8 +1,7 @@
 // index.js - Entry point for LinkedIn Automation Engine
 require('dotenv').config();
 const WorkflowEngine = require('./workflows/workflowEngine');
-const CronScheduler = require('./scheduler/cronScheduler');
-const { logger } = require('./utils/logger');
+const scheduler = require('./scheduler/cronScheduler');const { logger } = require('./utils/logger');
 const main = async () => {
   logger.info('LinkedIn Automation Engine starting...');
 
@@ -17,7 +16,6 @@ const main = async () => {
   }
 
   logger.info('Starting scheduler mode');
-  const scheduler = new CronScheduler();
 
   // Schedule the LinkedIn automation workflow to run every day at 9 AM
   scheduler.schedule(
