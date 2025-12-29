@@ -1,15 +1,14 @@
 // workflows/workflowEngine.js
-const logger = require('../utils/logger');
+const { logger } = require('../utils/logger');
 const stateStore = require('../utils/stateStore');
-const GitHubTrigger = require('../triggers/githubTrigger');
-const SignalClassifier = require('../triggers/signalClassifier');
-const DataFetcher = require('../services/dataFetcher');
-const DataNormalizer = require('../services/dataNormalizer');
-const PromptBuilder = require('../services/promptBuilder');
-const ContentGenerator = require('../services/contentGenerator');
-const ImagePromptGenerator = require('../services/imagePromptGenerator');
-const LinkedInPublisher = require('../services/linkedinPublisher');
-
+const { GitHubTrigger } = require('../triggers/githubTrigger');
+const { SignalClassifier } = require('../triggers/signalClassifier');
+const { DataFetcher } = require('../services/dataFetcher');
+const { DataNormalizer } = require('../services/dataNormalizer');
+const { PromptBuilder } = require('../services/promptBuilder');
+const { ContentGenerator } = require('../services/contentGenerator');
+const { ImagePromptGenerator } = require('../services/imagePromptGenerator');
+const { LinkedInPublisher } = require('../services/linkedinPublisher');
 /**
  * WORKFLOW ENGINE - FULLY INTEGRATED
  * Orchestrates the complete automation pipeline:
