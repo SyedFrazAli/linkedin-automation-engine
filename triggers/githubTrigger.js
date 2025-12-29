@@ -1,7 +1,7 @@
 // triggers/githubTrigger.js
 const axios = require('axios');
-const logger = require('../utils/logger');
-const stateStore = require('../utils/stateStore');
+const { logger } = require('../utils/logger')
+  const stateStore = require('../utils/stateStore');
 
 class GitHubTrigger {
   constructor() {
