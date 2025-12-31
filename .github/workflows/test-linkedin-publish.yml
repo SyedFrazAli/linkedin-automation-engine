@@ -1,0 +1,29 @@
+name: Test LinkedIn Publishing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Run LinkedIn publishing test
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: ${{ secrets.GITHUB_OWNER }}
+          GITHUB_REPO: ${{ secrets.GITHUB_REPO }}
+        run: node tests/testLinkedInPublish.js
