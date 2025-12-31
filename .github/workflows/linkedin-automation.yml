@@ -32,7 +32,7 @@ jobs:
         
       - name: Run LinkedIn Automation Engine
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           POLLINATIONS_API_URL: https://pollinations.ai
         run: |
