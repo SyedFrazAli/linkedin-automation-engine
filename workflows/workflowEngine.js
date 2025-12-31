@@ -1,5 +1,5 @@
 // workflows/workflowEngine.js
-const { logger } = require('../utils/logger');
+const logger = require('../utils/logger');
 const stateStore = require('../utils/stateStore');
 const { GitHubTrigger } = require('../triggers/githubTrigger');
 const { SignalClassifier } = require('../triggers/signalClassifier');
