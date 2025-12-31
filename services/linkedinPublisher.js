@@ -1,7 +1,6 @@
 // services/linkedinPublisher.js
 const axios = require('axios');
-const { logger } = require('../utils/logger')
-/**
+const logger = require('../utils/logger')/**
  * PHASE 6: LinkedIn Publishing
  * Queue-first approach with optional auto-publish
  * Handles LinkedIn Share API integration
