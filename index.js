@@ -14,7 +14,7 @@ const main = async () => {
     const engine = new WorkflowEngine();
     await engine.executeWorkflow();
     process.exit(0);
-  }
+  } else {
 
   logger.info('Starting scheduler mode');
 
@@ -43,6 +43,7 @@ const main = async () => {
     scheduler.stopAll();
     process.exit(0);
   });
+      }
 };
 
 main().catch((error) => {
