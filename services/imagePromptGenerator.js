@@ -1,7 +1,6 @@
 // services/imagePromptGenerator.js
 const axios = require('axios');
-const { logger } = require('../utils/logger')
-/**
+const logger = require('../utils/logger')/**
  * PHASE 5: Image Generation
  * Generate AI image prompts or retrieve free stock images
  * Supports: Unsplash API (free), Pexels API (free), AI prompt generation
