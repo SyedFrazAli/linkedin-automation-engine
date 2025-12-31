@@ -1,37 +1,30 @@
 name: LinkedIn Automation Engine
 
-# Run on schedule (daily at 9 AM UTC) or manually
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 9 * * *'  # Daily at 9 AM UTC
-  workflow_dispatch:  # Allow manual trigger
-  push:
-    branches:
-      - main
-    paths:
-      - 'triggers/**'
-      - 'services/**'
-      - 'workflows/**'
+    - cron: '0 9 * * *'
 
 jobs:
-  generate-linkedin-content:
+  run-automation:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run LinkedIn Automation Engine
         env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            GITHUB_OWNER: SyedFrazAli
-                  GITHUB_REPO: linkedin-automation-engine
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: SyedFrazAli
+          GITHUB_REPO: linkedin-automation-engine
+        run: |
+          node index.js workflow
