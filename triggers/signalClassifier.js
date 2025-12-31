@@ -1,6 +1,6 @@
 // triggers/signalClassifier.js
-const { logger } = require('../utils/logger')
-class SignalClassifier {
+const logger = require('../utils/logger')
+  class SignalClassifier {
   constructor() {
     // File extension to category mappings
     this.extensionMap = {
