@@ -1,7 +1,6 @@
 // services/dataFetcher.js
 const axios = require('axios');
-const { logger } = require('../utils/logger');
-
+const logger = require('../utils/logger');
 class DataFetcher {
   constructor() {
     this.wikipediaBaseUrl = 'https://en.wikipedia.org/api/rest_v1';
