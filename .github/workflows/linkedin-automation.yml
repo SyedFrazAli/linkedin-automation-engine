@@ -33,5 +33,5 @@ jobs:
       - name: Run LinkedIn Automation Engine
         env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                      GITHUB_OWNER: SyedFrazAli
-                            GITHUB_REPO: linkedin-automation-engine
+            GITHUB_OWNER: SyedFrazAli
+                  GITHUB_REPO: linkedin-automation-engine
