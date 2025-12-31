@@ -1,8 +1,7 @@
 // services/promptBuilder.js
-const { logger } = require('../utils/logger')
+const logger = require('../utils/logger'
 class PromptBuilder {
-  constructor() {
-    // LinkedIn post constraints
+    constructor() {  // LinkedIn post constraints
     this.minLength = 200;
     this.maxLength = 300;
     this.recommendedHashtags = 3;
